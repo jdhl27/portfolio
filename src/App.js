@@ -94,7 +94,7 @@ function App() {
                     width: "100%",
                     height: item?.snippet?.thumbnails.high.height,
                     backgroundImage: `url(${item?.snippet?.thumbnails.high.url})`,
-                    backgroundRepeat: 'round'
+                    backgroundRepeat: "round",
                   }}
                 ></div>
                 <img src={require("./assets/play.png")} className="play" />
@@ -120,7 +120,7 @@ function App() {
       <div id="contacto" className="container">
         <h2 className="h2">Contacto</h2>
         <div className="line"></div>
-        <ContactUs/>
+        <ContactUs />
       </div>
       <FooterComponent />
     </div>
