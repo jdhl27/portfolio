@@ -44,15 +44,15 @@ export const ContactUs = () => {
     <div className="container-border">
       <form className="contact-form" ref={form} onSubmit={sendEmail}>
         <label for="name">
-          Nombre<span className="required">*</span>
+          Nombre <span className="required">*</span>
         </label>
         <input type="text" className="text-input" name="user_name" required />
         <label for="email">
-          Correo Electrónico: <span className="required">*</span>
+          Correo Electrónico <span className="required">*</span>
         </label>
         <input type="email" className="text-input" name="user_email" required />
         <label for="message">
-          Mensaje: <span className="required">*</span>
+          Mensaje <span className="required">*</span>
         </label>
         <textarea name="message" required></textarea>
         <br />

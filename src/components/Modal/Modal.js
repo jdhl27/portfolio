@@ -34,6 +34,7 @@ function ModalComponent({ modalIsOpen = false, onCloseModal, info = {} }) {
                },
             },
           }}
+          className = "video-player"
           volume = {0.3}
           style={{
             width: "100%",

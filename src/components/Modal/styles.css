@@ -40,6 +40,23 @@
   }
 }
 
+@media only screen and (max-width: 599px) {
+  .video-player {
+    width: 470px !important;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .video-player {
+    width: 390px !important;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .video-player {
+    width: 360px !important;
+  }
+}
+
 @media all and (max-width: 1400px) and (min-width: 800px){
   .content {
     margin-right: -22%;
