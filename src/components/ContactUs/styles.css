@@ -1,4 +1,13 @@
+.contact-form {
+  display: grid;
+  justify-content: center;
+}
 
+.container-border {
+  padding: 40px;
+  background-color: #191d22;
+  /* width: 38%; */
+}
 .contact-form .text-input {
   border: none;
   padding: 10px 15px;
@@ -81,6 +90,28 @@ span.required {
   width: 26%;
   height: 10%;
   margin-left: 10%;
+}
+
+@media all and (max-width: 699px){
+  .contact-form textarea {
+    background: rgb(60, 60, 60);
+    resize: none;
+    padding: 15px;
+    height: 175px;
+    width: 288px;
+    margin: 10px 0px;
+    color: white;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 120%;
+    border: none;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
 }
 
 /* Animación */

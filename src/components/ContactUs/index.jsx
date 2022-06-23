@@ -41,6 +41,7 @@ export const ContactUs = () => {
   };
 
   return (
+    <div className="container-border">
       <form className="contact-form" ref={form} onSubmit={sendEmail}>
         <label for="name">
           Nombre<span className="required">*</span>
@@ -57,5 +58,6 @@ export const ContactUs = () => {
         <br />
         <input type="submit" value="Enviar" className="send" />
       </form>
+    </div>
   );
 };
