@@ -11,16 +11,19 @@ export const ContactUs = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const SERVICE = process.env.REACT_APP_SERVICE_EMAIL
+    const TEMPLATE = process.env.REACT_APP_TEMPLATE_EMAIL
+    const USER = process.env.REACT_APP_USER_EMAIL
+
     emailjs
       .sendForm(
-        "service_7o2x3v1",
-        "template_pibpgkr",
+        SERVICE,
+        TEMPLATE,
         form.current,
-        "pcfSeSm63LS9mQA_K"
+        USER
       )
       .then(
         async (result) => {
-          console.log(result.text);
           if (result.text === "OK") {
             await MySwal.fire({
               title: <strong>Gracias</strong>,
@@ -33,7 +36,7 @@ export const ContactUs = () => {
         async (error) => {
           await MySwal.fire({
             title: <strong>Error</strong>,
-            html: <i>Inténtalo de nuevo o enviame un correo a juan@test.com</i>,
+            html: <i>Inténtalo de nuevo o enviame un correo a Ferhernandez96@gmail.com</i>,
             icon: "error",
           });
         }

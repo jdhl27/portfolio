@@ -8,8 +8,8 @@ import ModalComponent from "./components/Modal/Modal";
 import Navbar from "./components/Nav/Navbar";
 import { videos } from "./dataVideos";
 
-const ID_CHANNEL_YOUTUBE = "UCR2aVqkHG97RR0K0pvZpL9Q";
-const API_KEY = "AIzaSyCik9j7cYTJMVvHHFRQopwBJMDZGWOxX4Y";
+const ID_CHANNEL_YOUTUBE = process.env.REACT_APP_ID_CHANNEL_YOUTUBE;
+const API_KEY = process.env.REACT_APP_API_KEY_GOOGLE;
 const URL_API = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${ID_CHANNEL_YOUTUBE}&part=snippet,id&order=date&maxResults=200`;
 export const URL_VIDEO = "http://www.youtube.com/watch?v=";
 
@@ -38,14 +38,12 @@ function App() {
       fetch(URL_API)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
           let arrayTempIdVideos = []
           data?.items?.forEach(element => {
             if (element.id.videoId) {
               arrayTempIdVideos.push(element)
             }
           });
-          console.log(arrayTempIdVideos);
           setVideosData(arrayTempIdVideos)
         });
     }
