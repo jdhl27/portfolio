@@ -33,23 +33,23 @@ function App() {
     [y]
   );
 
-  // useEffect(() => {
-  //   if (videosData.length <= 0) {
-  //     fetch(URL_API)
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         console.log(data)
-  //         let arrayTempIdVideos = []
-  //         data?.items?.forEach(element => {
-  //           if (element.id.videoId) {
-  //             arrayTempIdVideos.push(element)
-  //           }
-  //         });
-  //         console.log(arrayTempIdVideos);
-  //         setVideosData(arrayTempIdVideos)
-  //       });
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (videosData.length <= 0) {
+      fetch(URL_API)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          let arrayTempIdVideos = []
+          data?.items?.forEach(element => {
+            if (element.id.videoId) {
+              arrayTempIdVideos.push(element)
+            }
+          });
+          console.log(arrayTempIdVideos);
+          setVideosData(arrayTempIdVideos)
+        });
+    }
+  }, []);
 
   useEffect(() => {
     setY(window.scrollY);
@@ -79,8 +79,8 @@ function App() {
         <h2 className="h2">Videos</h2>
         <div className="line"></div>
         <div className="container-videos-todos">
-          {videos.length > 0 &&
-            videos.map((item, i) => (
+          {videosData.length > 0 &&
+            videosData.map((item, i) => (
               <div
                 key={i}
                 className="video-container"
