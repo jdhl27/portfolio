@@ -41,7 +41,6 @@ const RightNav = ({ open, onClickHiddenModal }) => {
   };
 
   const onCloseModal = () => {
-    console.log("entro");
     onClickHiddenModal();
   };
 

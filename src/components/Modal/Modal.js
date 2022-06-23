@@ -35,7 +35,7 @@ function ModalComponent({ modalIsOpen = false, onCloseModal, info = {} }) {
             },
           }}
           className = "video-player"
-          volume = {0.3}
+          volume = {0.5}
           style={{
             width: "100%",
             // height: info?.snippet?.thumbnails.high.height
