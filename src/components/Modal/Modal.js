@@ -1,13 +1,10 @@
-import React from 'react'
-import Modal from 'react-modal';
-import ReactPlayer from 'react-player';
-import './styles.css';
+import React from "react";
+import Modal from "react-modal";
+import ReactPlayer from "react-player";
+import { URL_VIDEO } from "../../App";
+import "./styles.css";
 
-function ModalComponent({
-  modalIsOpen = false,
-  onCloseModal,
-  info = {}
-}) {
+function ModalComponent({ modalIsOpen = false, onCloseModal, info = {} }) {
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -18,29 +15,34 @@ function ModalComponent({
       contentLabel="Example Modal"
       ariaHideApp={false}
     >
-      <div style={{padding: '11px'}}>
-        <div className='container-text-modal'>
-          <span style={{fontWeight: 200}}>{info?.name}</span>
-          <span className='close' onClick={onCloseModal}>X</span>
+      <div>
+        <div className="container-text-modal">
+          {/* <span style={{fontWeight: 200}}>{info?.name}</span> */}
+          <span className="close" onClick={onCloseModal}>
+            X
+          </span>
         </div>
         <ReactPlayer
-          url={require('../../assets/video.mp4')}
-          loop={false}
-          controls
-          playing={true}
-          // muted={true}
+          // url={require('../../assets/video.mp4')}
+          url={URL_VIDEO+info?.id?.videoId}
+          // loop={false}
+          config={{
+            youtube: {
+              playerVars: {
+                controls: true,
+                autoplay: true
+               },
+            },
+          }}
           volume = {0.3}
           style={{
-            objectFit: 'cover',
-            width: '80%',
-            height: 'initial'
+            width: "100%",
+            // height: info?.snippet?.thumbnails.high.height
           }}
-          width={'initial'}
-          height={'initial'}
         />
       </div>
     </Modal>
-  )
+  );
 }
 
-export default ModalComponent
+export default ModalComponent;

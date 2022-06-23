@@ -5,12 +5,14 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   text-align: -webkit-center;
+  background-color: #191d23;
+  padding-bottom: 43px;
   .container-video{
     width: 73%
   }
   .container-text{
     position: absolute;
-    bottom: 0;
+    bottom: 87px;
     text-align: left;
     padding: 13px;
 
@@ -50,7 +52,7 @@ function Main({
           // url='https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO' 
           url={require('../../assets/video.mp4')}
           loop
-          // controls
+          controls
           playing
           muted={true}
           style={{

@@ -1,38 +1,290 @@
 export const videos = [
-    {
-        id: 1,
-        name: "This is Not America",
-        description: "Lorem inpsun eehiste deo ou do uoudoe uedou",
-        url: "https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO"
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
     },
-    {
-        id: 2,
-        name: "This is Not America",
-        description: "Lorem inpsun eehiste deo ou do uoudoe uedou",
-        url: "https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO"
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
     },
-    {
-        id: 3,
-        name: "This is Not America",
-        description: "Lorem inpsun eehiste deo ou do uoudoe uedou",
-        url: "https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO"
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
     },
-    {
-        id: 4,
-        name: "This is Not America",
-        description: "Lorem inpsun eehiste deo ou do uoudoe uedou",
-        url: "https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO"
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
     },
-    {
-        id: 5,
-        name: "This is Not America",
-        description: "Lorem inpsun eehiste deo ou do uoudoe uedou",
-        url: "https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO"
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
     },
-    {
-        id: 6,
-        name: "This is Not America",
-        description: "Lorem inpsun eehiste deo ou do uoudoe uedou",
-        url: "https://www.youtube.com/watch?v=GK87AKIPyZY&ab_channel=ResidenteVEVO"
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
     },
-]
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
+    },
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
+    },
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
+    },
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
+    },
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
+    },
+  },
+  {
+    id: { videoId: "GK87AKIPyZY" },
+    snippet: {
+      title: "This is not America",
+      description: "Video description test",
+      thumbnails: {
+        default: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/default.jpg",
+          width: 120,
+          height: 90,
+        },
+        high: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/hqdefault.jpg",
+          width: 480,
+          height: 360,
+        },
+        medium: {
+          url: "https://i.ytimg.com/vi/wtKWQVG05XQ/mqdefault.jpg",
+          width: 320,
+          height: 180,
+        },
+      },
+    },
+  },
+];

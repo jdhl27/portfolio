@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const Ul = styled.ul`
@@ -10,7 +10,7 @@ const Ul = styled.ul`
   li {
     padding: 18px 10px;
   }
-  .link{
+  .link {
     color: #fff;
     font-size: 2rem;
     text-decoration: none;
@@ -25,18 +25,16 @@ const Ul = styled.ul`
   flex-flow: column nowrap;
   background-color: #13171d;
   position: fixed;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   top: 0;
   right: 0;
   height: 100vh;
   width: 100%;
   padding-top: 3.5rem;
   transition: transform 0.3s ease-in-out;
-  
 `;
 
 const RightNav = ({ open, onClickHiddenModal }) => {
-
   const scrollToTop = () => {
     scroll.scrollToTop();
     onCloseModal();
@@ -44,7 +42,7 @@ const RightNav = ({ open, onClickHiddenModal }) => {
 
   const onCloseModal = () => {
     console.log("entro");
-    onClickHiddenModal()
+    onClickHiddenModal();
   };
 
   return (
@@ -55,19 +53,22 @@ const RightNav = ({ open, onClickHiddenModal }) => {
         </span>
       </li> */}
       <li>
-        <a className='link' href="#videos" onClick={onCloseModal}>
+        <a className="link" href="#videos" onClick={onCloseModal}>
           Videos
         </a>
-
       </li>
       <li>
-        <a className='link' href="#fotos" onClick={onCloseModal}>
+        <a className="link" href="#fotos" onClick={onCloseModal}>
           Fotos
         </a>
-
+      </li>
+      <li>
+        <a className="link" href="#contacto" onClick={onCloseModal}>
+          Contacto
+        </a>
       </li>
     </Ul>
-  )
-}
+  );
+};
 
-export default RightNav
+export default RightNav;

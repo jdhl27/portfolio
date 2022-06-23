@@ -22,15 +22,16 @@
 .container-text-modal{
   flex-direction: row;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .close{
-  font-weight: bolder;
-  font-family: fantasy;
-  font-size: 29px;
+  /* font-weight: bolder; */
+  /* font-family: fantasy; */
+  font-size: 20px;
   cursor: pointer;
+  padding: 6px;
 }
 
 @media only screen and (max-width: 799px) {

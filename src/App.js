@@ -1,31 +1,55 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import ReactPlayer from 'react-player';
-import './App.css';
-import Main from './components/Main/Main';
-import ModalComponent from './components/Modal/Modal';
-import Navbar from './components/Nav/Navbar';
-import { videos } from './dataVideos';
+import { useCallback, useEffect, useState } from "react";
+import ReactPlayer from "react-player/youtube";
+import "./App.css";
+import { ContactUs } from "./components/ContactUs";
+import FooterComponent from "./components/Footer";
+import Main from "./components/Main/Main";
+import ModalComponent from "./components/Modal/Modal";
+import Navbar from "./components/Nav/Navbar";
+import { videos } from "./dataVideos";
+
+const ID_CHANNEL_YOUTUBE = "UCR2aVqkHG97RR0K0pvZpL9Q";
+const API_KEY = "AIzaSyCik9j7cYTJMVvHHFRQopwBJMDZGWOxX4Y";
+const URL_API = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${ID_CHANNEL_YOUTUBE}&part=snippet,id&order=date&maxResults=200`;
+export const URL_VIDEO = "http://www.youtube.com/watch?v=";
 
 function App() {
-
   const [y, setY] = useState(window.scrollY);
-  const [videoPlay, setVideoPlay] = useState(null)
-  const [infoModal, setInfoModal] = useState({})
+  const [infoModal, setInfoModal] = useState({});
   const [modalIsOpen, setIsOpen] = useState(false);
-  const playerVideo = useRef()
+  const [videosData, setVideosData] = useState([]);
 
   const handleNavigation = useCallback(
-    e => {
+    (e) => {
       const window = e.currentTarget;
       var header = document.getElementById("button-float");
-      if (window.scrollY == 0) {
+      if (window.scrollY === 0) {
         header.classList.remove("scroll");
       } else if (y < window.scrollY) {
         header.classList.add("scroll");
       }
       setY(window.scrollY);
-    }, [y]
+    },
+    [y]
   );
+
+  // useEffect(() => {
+  //   if (videosData.length <= 0) {
+  //     fetch(URL_API)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log(data)
+  //         let arrayTempIdVideos = []
+  //         data?.items?.forEach(element => {
+  //           if (element.id.videoId) {
+  //             arrayTempIdVideos.push(element)
+  //           }
+  //         });
+  //         console.log(arrayTempIdVideos);
+  //         setVideosData(arrayTempIdVideos)
+  //       });
+  //   }
+  // }, []);
 
   useEffect(() => {
     setY(window.scrollY);
@@ -42,78 +66,63 @@ function App() {
     } else {
       document.body.style.overflow = "visible";
     }
-  })
-  
-
-  // const ref = (player) => {
-  //   playerVideo = player
-  // }
+  });
 
   return (
     <div className="App">
       <Navbar />
       <Main />
-      <a href='#' className='button-float' id='button-float'>
-        {/* <img src={require('./assets/arrow-up.png')} /> */}
-        <img src={require('./assets/up-arrow.png')} />
+      <a href="#" className="button-float" id="button-float">
+        <img src={require("./assets/up-arrow.png")} />
       </a>
-      <div id='videos' className='container'>
-        <h2>Videos</h2>
-        <div className='container-videos-todos'>
-          {
+      <div id="videos" className="container">
+        <h2 className="h2">Videos</h2>
+        <div className="line"></div>
+        <div className="container-videos-todos">
+          {videos.length > 0 &&
             videos.map((item, i) => (
-              <div 
-                key={i} 
-                className='video-container' 
+              <div
+                key={i}
+                className="video-container"
                 onClick={() => {
-                  setIsOpen(true)
-                  setInfoModal(item)
-                }}
-                onMouseOver={()=> {
-                  setVideoPlay(i)
-                }}
-                onMouseOut={()=> {
-                  setVideoPlay(null)
-                  playerVideo.current.seekTo(0)
+                  setIsOpen(true);
+                  setInfoModal(item);
                 }}
               >
-                <ReactPlayer
-                  url={require('./assets/video.mp4')}
-                  ref = {playerVideo}
-                  loop = {false}
-                  // controls
-                  playing = { videoPlay == i}
-                  muted={true}
+                <div
                   style={{
-                    objectFit: 'cover',
-                    // WebkitFilter: videoPlay == i ? "grayscale(0)" : "grayscale(1)", /* Webkit */
-                    // filter: videoPlay == i ? "grayscale(0)" : "grayscale(1)" /* W3C */,
-                    width: '100%',
-                    height: 'initial'
+                    width: "100%",
+                    height: item?.snippet?.thumbnails.high.height,
+                    backgroundImage: `url(${item?.snippet?.thumbnails.high.url})`,
+                    backgroundRepeat: 'round'
                   }}
-                  width = {'initial'}
-                  height = {'initial'}
-                />
-                <img
-                  src={require('./assets/play.png')} 
-                  className="play"/>
-                <h2 style={{margin: "15px 0"}}>{item?.name}</h2>
-                <p style={{margin: 0}}> {item?.description}</p>
+                ></div>
+                <img src={require("./assets/play.png")} className="play" />
+                <h2 style={{ margin: "15px 0", marginBottom: "5px" }}>
+                  {item?.snippet?.title}
+                </h2>
+                {/* <div className="line-title"></div> */}
+                <p style={{ margin: 0 }}> {item?.snippet?.description}</p>
               </div>
-            ))
-          }
+            ))}
         </div>
-        <ModalComponent 
-          modalIsOpen = {modalIsOpen}
-          onCloseModal = {() => {
-            setIsOpen(false)
+        <ModalComponent
+          modalIsOpen={modalIsOpen}
+          onCloseModal={() => {
+            setIsOpen(false);
           }}
-          info = {infoModal}
+          info={infoModal}
         />
       </div>
-      <div id='fotos' className='container'>
-        <p>wqetesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+      {/* <div id="fotos" className="container">
+        <h2 className="h2">Fotos</h2>
+      </div> */}
+      <div id="contacto" className="container">
+        <h2 className="h2">Contacto</h2>
+        <div className="line"></div>
+        <ContactUs/>
       </div>
+      <FooterComponent />
     </div>
   );
 }

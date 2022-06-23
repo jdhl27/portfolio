@@ -6,6 +6,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #191d23;
+  padding: 1%;
   .container-logo{
     display: flex;
     flex-direction: row;
