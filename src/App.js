@@ -36,7 +36,6 @@ function App() {
       fetch(URL_API)
         .then((response) => response.json())
         .then((data) => {
-          console.log("response: ", data);
           let arrayTempIdVideos = [];
           data?.items?.forEach((element) => {
             if (element.id.videoId) {
@@ -94,7 +93,6 @@ function App() {
         <div className="container-videos-todos">
           {videosData.length > 0 &&
             videosData.map((item, i) => {
-              console.log(item);
               return (
                 <div
                   key={i}
