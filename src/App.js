@@ -61,7 +61,7 @@ function App() {
           setVideosData(arrayTempIdVideos);
         });
     }
-  }, [videosData?.length]);
+  }, []);
 
   useEffect(() => {
     setY(window.scrollY);
