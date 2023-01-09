@@ -1,12 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import ReactPlayer from "react-player/youtube";
 import "./App.css";
 import { ContactUs } from "./components/ContactUs";
 import FooterComponent from "./components/Footer";
 import Main from "./components/Main/Main";
 import ModalComponent from "./components/Modal/Modal";
 import Navbar from "./components/Nav/Navbar";
-import { videos } from "./dataVideos";
 
 const ID_CHANNEL_YOUTUBE = process.env.REACT_APP_ID_CHANNEL_YOUTUBE;
 const API_KEY = process.env.REACT_APP_API_KEY_GOOGLE;
@@ -38,13 +36,30 @@ function App() {
       fetch(URL_API)
         .then((response) => response.json())
         .then((data) => {
-          let arrayTempIdVideos = []
-          data?.items?.forEach(element => {
+          console.log("response: ", data);
+          let arrayTempIdVideos = [];
+          data?.items?.forEach((element) => {
             if (element.id.videoId) {
-              arrayTempIdVideos.push(element)
+              element = {
+                ...element,
+                snippet: {
+                  ...element?.snippet,
+                  thumbnails: {
+                    ...element?.snippet?.thumbnails,
+                    default: {
+                      ...element?.snippet?.thumbnails?.default,
+                      url: element?.snippet?.thumbnails?.default?.url?.replace(
+                        "default",
+                        "sd2"
+                      ),
+                    },
+                  },
+                },
+              };
+              arrayTempIdVideos.push(element);
             }
           });
-          setVideosData(arrayTempIdVideos)
+          setVideosData(arrayTempIdVideos);
         });
     }
   }, []);
@@ -78,31 +93,34 @@ function App() {
         <div className="line"></div>
         <div className="container-videos-todos">
           {videosData.length > 0 &&
-            videosData.map((item, i) => (
-              <div
-                key={i}
-                className="video-container"
-                onClick={() => {
-                  setIsOpen(true);
-                  setInfoModal(item);
-                }}
-              >
+            videosData.map((item, i) => {
+              console.log(item);
+              return (
                 <div
-                  style={{
-                    width: "100%",
-                    height: item?.snippet?.thumbnails.high.height,
-                    backgroundImage: `url(${item?.snippet?.thumbnails.high.url})`,
-                    backgroundRepeat: "round",
+                  key={i}
+                  className="video-container"
+                  onClick={() => {
+                    setIsOpen(true);
+                    setInfoModal(item);
                   }}
-                ></div>
-                <img src={require("./assets/play.png")} className="play" />
-                <h2 style={{ margin: "15px 0", marginBottom: "5px" }}>
-                  {item?.snippet?.title}
-                </h2>
-                {/* <div className="line-title"></div> */}
-                <p style={{ margin: 0 }}> {item?.snippet?.description}</p>
-              </div>
-            ))}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: item?.snippet?.thumbnails.high.height,
+                      backgroundImage: `url(${item?.snippet?.thumbnails.default.url})`,
+                      backgroundRepeat: "round",
+                    }}
+                  ></div>
+                  <img src={require("./assets/play.png")} className="play" />
+                  <h2 style={{ margin: "15px 0", marginBottom: "5px" }}>
+                    {item?.snippet?.title}
+                  </h2>
+                  {/* <div className="line-title"></div> */}
+                  <p style={{ margin: 0 }}> {item?.snippet?.description}</p>
+                </div>
+              );
+            })}
         </div>
         <ModalComponent
           modalIsOpen={modalIsOpen}
