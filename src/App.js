@@ -49,7 +49,7 @@ function App() {
                       ...element?.snippet?.thumbnails?.default,
                       url: element?.snippet?.thumbnails?.default?.url?.replace(
                         "default",
-                        "sd2"
+                        "maxres2" //
                       ),
                     },
                   },
