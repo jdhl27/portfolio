@@ -19,6 +19,18 @@ const Nav = styled.nav`
     font-weight: 700;
     font-size: 21px;
   }
+
+  .logo-img {
+    width: 10%;
+  }
+
+  @media only screen and (max-width: 799px) {
+    .logo-img {
+      width: 28%;
+    padding: 10px 0px;
+    }
+  }
+
   span{
     margin-left: 10px
   }
@@ -28,7 +40,8 @@ const Navbar = () => {
   return (
     <Nav>
       <div className="container-logo">
-        <h2 className="logo">Ferney Hernández</h2>
+      <img src={require("../../assets/logo_blanco2.png")} className="logo-img" />
+        {/* <h2 className="logo">Ferney Hernández</h2> */}
         {/* <span>Creador de contenido</span> */}
       </div>
       <Burger />
