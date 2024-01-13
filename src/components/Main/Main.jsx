@@ -41,8 +41,8 @@ const Container = styled.div`
 `;
 
 function Main({
-  title = "Love it",
-  description = "Pellentesque habitant morbi tristique senectus"
+  title = "Creemos en las ideas necias",
+  description = ""
 }) {
   return (
     <Container>
