@@ -111,7 +111,7 @@ function App() {
                     }}
                   ></div>
                   <img src={require("./assets/play.png")} className="play" />
-                  <h2 style={{ margin: "15px 0", marginBottom: "5px" }}>
+                  <h2 style={{ textAlign: "center" }}>
                     {item?.snippet?.title}
                   </h2>
                   {/* <div className="line-title"></div> */}
@@ -131,9 +131,14 @@ function App() {
       {/* <div id="fotos" className="container">
         <h2 className="h2">Fotos</h2>
       </div> */}
+
       <div id="contacto" className="container">
         <h2 className="h2">Contacto</h2>
         <div className="line"></div>
+        <div
+          class="elfsight-app-a6cfa1ba-9a8b-411c-964c-c06adb730539"
+          data-elfsight-app-lazy
+        ></div>
         <ContactUs />
       </div>
       <FooterComponent />
