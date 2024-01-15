@@ -102,14 +102,15 @@ function App() {
                     setInfoModal(item);
                   }}
                 >
-                  <div
+                  <img
+                    src={item?.snippet?.thumbnails.default.url}
+                    alt={item?.snippet?.title}
                     style={{
                       width: "100%",
-                      height: item?.snippet?.thumbnails.high.height,
-                      backgroundImage: `url(${item?.snippet?.thumbnails.default.url})`,
-                      backgroundRepeat: "round",
+                      height: "auto",
+                      maxWidth: "100%",
                     }}
-                  ></div>
+                  />
                   <img src={require("./assets/play.png")} className="play" />
                   <h2 style={{ textAlign: "center" }}>
                     {item?.snippet?.title}

@@ -64,7 +64,9 @@ function Main({ title = "Creemos en las ideas necias", description = "" }) {
           height={"initial"}
         />
         <div className="container-text">
-          <h1>{title}</h1>
+          <h1 style={{ textShadow: "2px 2px 4px rgb(0 0 0 / 90%)" }}>
+            {title}
+          </h1>
           <h3>{description}</h3>
         </div>
       </div>

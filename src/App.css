@@ -38,6 +38,22 @@
   margin-bottom: 2%;
   position: relative;
   background-color: #1c1b1b;
+  overflow: hidden; /* Evita que la sombra se desborde en el hover */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.video-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.video-container img.play {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.video-container:hover img.play {
+  opacity: 0.5;
 }
 
 .play {
